@@ -70,6 +70,7 @@ def fix_shape(image):
 
 def resize(image, new_shape, interpolation="linear"):
     image = reorder_img(image, resample=interpolation)
+    new_shape = [float(i) for i in new_shape]
     zoom_level = np.divide(new_shape, image.shape)
     new_spacing = np.divide(image.header.get_zooms(), zoom_level)
     new_data = resample_to_spacing(image.get_data(), image.header.get_zooms(), new_spacing,

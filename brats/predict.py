@@ -6,6 +6,9 @@ from unet3d.prediction import run_validation_cases
 
 def main():
     prediction_dir = os.path.abspath("prediction")
+    print (prediction_dir)
+    print ("validation file: ",config["validation_file"])
+    print ("model file: ",config["model_file"])
     run_validation_cases(validation_keys_file=config["validation_file"],
                          model_file=config["model_file"],
                          training_modalities=config["training_modalities"],
